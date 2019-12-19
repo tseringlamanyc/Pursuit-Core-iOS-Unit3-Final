@@ -10,6 +10,7 @@ import Foundation
 
 struct AllElements: Codable {
     
+//    let id: Int?
     let name: String
     let atomicMass: Double
     let symbol: String
@@ -17,8 +18,10 @@ struct AllElements: Codable {
     let melt: Double?
     let boil: Double?
     let discoveredBy: String?
+    let favoritedBy: String?
     
     enum CodingKeys: String, CodingKey {
+//        case id
         case name
         case atomicMass = "atomic_mass"
         case symbol
@@ -26,5 +29,6 @@ struct AllElements: Codable {
         case melt
         case boil
         case discoveredBy = "discovered_by"
+        case favoritedBy
     }
 }

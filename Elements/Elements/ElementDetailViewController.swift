@@ -17,7 +17,7 @@ class ElementDetailViewController: UIViewController {
     @IBOutlet weak var boilingPoint: UILabel!
     @IBOutlet weak var meltingPoint: UILabel!
     @IBOutlet weak var discoveredBy: UILabel!
-
+    
     var elements: AllElements!
     
     override func viewDidLoad() {
@@ -52,5 +52,19 @@ class ElementDetailViewController: UIViewController {
     
     @IBAction func favoritePressed(_ sender: UIBarButtonItem) {
         
+        let favorite = AllElements.init(name: elements.name, atomicMass: elements.atomicMass, symbol: elements.symbol, number: elements.number, melt: elements.melt ?? 0.0, boil: elements.boil ?? 0.0, discoveredBy: elements.discoveredBy ?? "N/A", favoritedBy: "Tsering")
+        
+        ElementsAPI.postElements(favElement: favorite) { [weak self] (result) in
+            switch result {
+            case .failure(let appError):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Couldnt favorite", message: "\(appError)")
+                }
+            case .success(_):
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Success", message: "Thanks") {alert in self?.dismiss(animated: true)}
+                }
+            }
+        }
     }
 }
