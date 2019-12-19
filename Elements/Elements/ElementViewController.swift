@@ -25,6 +25,7 @@ class ElementViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         loadElements()
+        
     }
     
     func loadElements() {
@@ -37,6 +38,17 @@ class ElementViewController: UIViewController {
             }
         }
     }
+    
+//    func loadMore() {
+//        ElementsAPI.getMoreElements { [weak self](result) in
+//            switch result {
+//            case .failure(let appError):
+//                print ("\(appError)")
+//            case .success(let more):
+//                self?.elements = more
+//            }
+//        }
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailVC = segue.destination as? ElementDetailViewController, let indexpath = tableView.indexPathForSelectedRow else {

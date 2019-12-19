@@ -24,6 +24,7 @@ class FavoritesViewController: UIViewController {
         super.viewDidLoad()
         loadFavorite()
         tableView.dataSource = self
+        title = "Tsering's Favorite Elements"
     }
     
     func loadFavorite() {

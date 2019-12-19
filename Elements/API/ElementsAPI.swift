@@ -28,6 +28,14 @@ struct ElementsAPI {
             case .success(let data):
                 do {
                     let elementsArr = try JSONDecoder().decode([AllElements].self, from: data)
+                    getMoreElements { (result) in
+                        switch result {
+                        case .failure(let appError):
+                            completionHandler(.failure(.networkClientError(appError)))
+                        case .success(let more):
+                            completionHandler(.success(elementsArr + more))
+                        }
+                    }
                     completionHandler(.success(elementsArr))
                 } catch {
                     completionHandler(.failure(.decodingError(error)))
@@ -72,6 +80,32 @@ struct ElementsAPI {
         
         guard let url = URL(string: getEndpoint) else {
             completionHandler(.failure(.badURL(getEndpoint)))
+            return
+        }
+        
+        let request = URLRequest(url: url)
+        
+        NetworkHelper.shared.performDataTask(with: request) { (result) in
+            switch result {
+            case .failure(let appError):
+                completionHandler(.failure(.networkClientError(appError)))
+            case .success(let data):
+                do {
+                    let favorites = try JSONDecoder().decode([AllElements].self, from: data)
+                    completionHandler(.success(favorites))
+                } catch {
+                    completionHandler(.failure(.decodingError(error)))
+                }
+            }
+        }
+    }
+    
+    static func getMoreElements(completionHandler: @escaping (Result<[AllElements], AppError>) -> ()) {
+        
+        let moreURL = "https://5c1d79abbc26950013fbcaa9.mockapi.io/api/v1/elements_remaining"
+        
+        guard let url = URL(string: moreURL) else {
+            completionHandler(.failure(.badURL(moreURL)))
             return
         }
         
