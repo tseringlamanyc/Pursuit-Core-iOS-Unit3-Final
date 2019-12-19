@@ -103,8 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				52A73F9C23ABD441008A76B3 /* CustomTableViewCell.swift */,
-				52A73F9E23ABD441008A76B3 /* ElementDetailViewController.swift */,
 				52A73F9F23ABD441008A76B3 /* ElementViewController.swift */,
+				52A73F9E23ABD441008A76B3 /* ElementDetailViewController.swift */,
 				52A73F9D23ABD441008A76B3 /* FavoritesViewController.swift */,
 				5734757321DA90F500FB6177 /* Supporting Files */,
 				5734756D21DA90C800FB6177 /* Info.plist */,

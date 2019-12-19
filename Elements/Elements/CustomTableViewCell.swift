@@ -15,4 +15,15 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var symbolName: UILabel!
     @IBOutlet weak var weightName: UILabel!
     
+    func loadCell(element: AllElements) {
+        elementName.text = element.name
+        symbolName.text = element.symbol
+        weightName.text = element.atomicMass.description
+        
+        
+        
+        
+        elementImage.getImage(with: <#T##String#>, completion: <#T##(Result<UIImage, AppError>) -> ()#>)
+    }
+    
 }
