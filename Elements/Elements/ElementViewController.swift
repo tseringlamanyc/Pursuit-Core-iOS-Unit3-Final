@@ -38,26 +38,13 @@ class ElementViewController: UIViewController {
             }
         }
     }
-    
-//    func loadMore() {
-//        ElementsAPI.getMoreElements { [weak self](result) in
-//            switch result {
-//            case .failure(let appError):
-//                print ("\(appError)")
-//            case .success(let more):
-//                self?.elements = more
-//            }
-//        }
-//    }
-    
+        
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailVC = segue.destination as? ElementDetailViewController, let indexpath = tableView.indexPathForSelectedRow else {
             fatalError()
         }
         detailVC.elements = elements[indexpath.row]
     }
-    
-    
 }
 
 extension ElementViewController: UITableViewDataSource, UITableViewDelegate {
@@ -77,6 +64,4 @@ extension ElementViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
-    
-    
 }
