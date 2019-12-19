@@ -20,10 +20,20 @@ class CustomTableViewCell: UITableViewCell {
         symbolName.text = element.symbol
         weightName.text = element.atomicMass.description
         
+        let imageURL = "http://www.theodoregray.com/periodictable/Tiles/018/s7.JPG"
         
-        
-        
-        elementImage.getImage(with: <#T##String#>, completion: <#T##(Result<UIImage, AppError>) -> ()#>)
+        elementImage.getImage(with: imageURL) { [weak self] (result) in
+            switch result {
+            case .failure(_):
+                DispatchQueue.main.async {
+                    self?.elementImage.image = UIImage(systemName: "exclamationmark.triabgle")
+                }
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self?.elementImage.image = image
+                }
+            }
+        }
     }
     
 }
