@@ -15,6 +15,8 @@
 		52A73FAA23ABD4BE008A76B3 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A73FA623ABD4BE008A76B3 /* AppError.swift */; };
 		52A73FAB23ABD4BE008A76B3 /* AlertFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A73FA723ABD4BE008A76B3 /* AlertFile.swift */; };
 		52A73FAC23ABD4BE008A76B3 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A73FA823ABD4BE008A76B3 /* URLSession.swift */; };
+		52A73FB023ABD62D008A76B3 /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A73FAF23ABD62D008A76B3 /* Element.swift */; };
+		52A73FB223ABD93F008A76B3 /* ElementsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A73FB123ABD93F008A76B3 /* ElementsAPI.swift */; };
 		5734756221DA90C700FB6177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734756121DA90C700FB6177 /* AppDelegate.swift */; };
 		5734756721DA90C700FB6177 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5734756521DA90C700FB6177 /* Main.storyboard */; };
 		5734756921DA90C800FB6177 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5734756821DA90C800FB6177 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		52A73FA623ABD4BE008A76B3 /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		52A73FA723ABD4BE008A76B3 /* AlertFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertFile.swift; sourceTree = "<group>"; };
 		52A73FA823ABD4BE008A76B3 /* URLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		52A73FAF23ABD62D008A76B3 /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		52A73FB123ABD93F008A76B3 /* ElementsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsAPI.swift; sourceTree = "<group>"; };
 		5734755E21DA90C700FB6177 /* Elements.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elements.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5734756121DA90C700FB6177 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5734756621DA90C700FB6177 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,9 +64,27 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		52A73FAD23ABD548008A76B3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				52A73FB123ABD93F008A76B3 /* ElementsAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		52A73FAE23ABD550008A76B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				52A73FAF23ABD62D008A76B3 /* Element.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5734755521DA90C700FB6177 = {
 			isa = PBXGroup;
 			children = (
+				52A73FAE23ABD550008A76B3 /* Models */,
+				52A73FAD23ABD548008A76B3 /* API */,
 				52A73FA423ABD483008A76B3 /* Helpers */,
 				5734756021DA90C700FB6177 /* Elements */,
 				5734755F21DA90C700FB6177 /* Products */,
@@ -176,9 +198,11 @@
 				52A73FA023ABD441008A76B3 /* CustomTableViewCell.swift in Sources */,
 				52A73FAB23ABD4BE008A76B3 /* AlertFile.swift in Sources */,
 				52A73FA223ABD441008A76B3 /* ElementDetailViewController.swift in Sources */,
+				52A73FB023ABD62D008A76B3 /* Element.swift in Sources */,
 				52A73FA123ABD441008A76B3 /* FavoritesViewController.swift in Sources */,
 				52A73FAC23ABD4BE008A76B3 /* URLSession.swift in Sources */,
 				5734756221DA90C700FB6177 /* AppDelegate.swift in Sources */,
+				52A73FB223ABD93F008A76B3 /* ElementsAPI.swift in Sources */,
 				52A73FA323ABD441008A76B3 /* ElementViewController.swift in Sources */,
 				52A73FAA23ABD4BE008A76B3 /* AppError.swift in Sources */,
 			);
@@ -329,7 +353,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Elements/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -348,7 +372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Elements/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
