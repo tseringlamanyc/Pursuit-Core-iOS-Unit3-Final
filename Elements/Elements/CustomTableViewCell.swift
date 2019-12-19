@@ -18,7 +18,7 @@ class CustomTableViewCell: UITableViewCell {
     func loadCell(element: AllElements) {
         elementName.text = element.name
         symbolName.text = element.symbol
-        weightName.text = element.atomicMass.description
+        weightName.text = element.atomicMass?.description
         
         var intString = String(element.number)
         

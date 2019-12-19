@@ -9,10 +9,8 @@
 import Foundation
 
 struct AllElements: Codable {
-    
-//    let id: Int?
     let name: String
-    let atomicMass: Double
+    let atomicMass: Double?
     let symbol: String
     var number: Int
     let melt: Double?
@@ -21,7 +19,7 @@ struct AllElements: Codable {
     let favoritedBy: String?
     
     enum CodingKeys: String, CodingKey {
-//        case id
+
         case name
         case atomicMass = "atomic_mass"
         case symbol

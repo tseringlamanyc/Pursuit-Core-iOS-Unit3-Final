@@ -28,7 +28,7 @@ class ElementDetailViewController: UIViewController {
     func updateUI() {
         elementName.text = elements.name
         elementSymbol.text = "Symbol:\(elements.symbol)"
-        elementWeight.text = "Weight: \(elements.atomicMass.description) U"
+        elementWeight.text = "Weight: \(elements.atomicMass?.description ?? "0.0") U"
         boilingPoint.text = "Boiling Point: \(elements.boil?.description ?? "N/A")°F"
         meltingPoint.text = "Melting Point: \(elements.melt?.description ?? "N/A")°F"
         discoveredBy.text = "Discovered by: \(elements.discoveredBy ?? "N/A")"
