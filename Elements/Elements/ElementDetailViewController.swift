@@ -23,6 +23,7 @@ class ElementDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        title = elements.name
     }
     
     func updateUI() {
