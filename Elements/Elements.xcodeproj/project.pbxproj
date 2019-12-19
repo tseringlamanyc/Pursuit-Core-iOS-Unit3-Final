@@ -106,7 +106,6 @@
 				52A73F9E23ABD441008A76B3 /* ElementDetailViewController.swift */,
 				52A73F9F23ABD441008A76B3 /* ElementViewController.swift */,
 				52A73F9D23ABD441008A76B3 /* FavoritesViewController.swift */,
-				5734756521DA90C700FB6177 /* Main.storyboard */,
 				5734757321DA90F500FB6177 /* Supporting Files */,
 				5734756D21DA90C800FB6177 /* Info.plist */,
 			);
@@ -116,6 +115,7 @@
 		5734757321DA90F500FB6177 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5734756521DA90C700FB6177 /* Main.storyboard */,
 				5734756121DA90C700FB6177 /* AppDelegate.swift */,
 				5734756821DA90C800FB6177 /* Assets.xcassets */,
 				5734756A21DA90C800FB6177 /* LaunchScreen.storyboard */,
