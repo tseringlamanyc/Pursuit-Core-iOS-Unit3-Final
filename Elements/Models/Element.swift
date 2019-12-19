@@ -14,7 +14,7 @@ struct AllElements: Codable {
     let name: String
     let atomicMass: Double
     let symbol: String
-    let number: Int
+    var number: Int
     let melt: Double?
     let boil: Double?
     let discoveredBy: String?

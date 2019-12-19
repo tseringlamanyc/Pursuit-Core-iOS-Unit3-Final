@@ -20,13 +20,21 @@ class CustomTableViewCell: UITableViewCell {
         symbolName.text = element.symbol
         weightName.text = element.atomicMass.description
         
-        let imageURL = "http://www.theodoregray.com/periodictable/Tiles/018/s7.JPG"
+        var intString = String(element.number)
+        
+        if intString.count == 1 {
+            intString = "00" + intString
+        } else if intString.count == 2 {
+            intString = "0" + intString
+        }
+    
+        let imageURL = "http://www.theodoregray.com/periodictable/Tiles/\(intString)/s7.JPG"
         
         elementImage.getImage(with: imageURL) { [weak self] (result) in
             switch result {
             case .failure(_):
                 DispatchQueue.main.async {
-                    self?.elementImage.image = UIImage(systemName: "exclamationmark.triabgle")
+                    self?.elementImage.image = UIImage(systemName: "exclamationmark.triangle")
                 }
             case .success(let image):
                 DispatchQueue.main.async {
